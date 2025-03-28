@@ -245,337 +245,180 @@ Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y
 
 \end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
-\section{6. Product backlog}
+\section{6. Product Backlog}
 \label{sec:backlog}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-El Product Backlog debe organizarse en cuatro épicas fundamentales del proyecto. Cada épica debe contener al menos dos historias de usuario que describan funcionalidades clave.
+El Product Backlog debe organizarse en cuatro \textbf{\textit{\'{e}picas}} fundamentales del proyecto. Cada \'{e}pica debe contener al menos dos historias de usuario que describan funcionalidades clave.
 
 El Product Backlog debe permitir interpretar cómo será el proyecto y su funcionalidad. Se deben indicar claramente las prioridades entre las historias de usuario y si hay alguna opcional.
 
-Las historias de usuario deben ser breves, claras y medibles, expresando el rol, la necesidad y el propósito de cada funcionalidad. También deben tener una prioridad definida para facilitar la planificación de los sprints. Además, cada historia de usuario debe incluir una ponderación en Story Points, un número entero que representa el tamaño de la historia en relación con otras de similar tipo. El criterio para calcular los Story Points debe indicarse explícitamente.
+Las historias de usuario deben ser breves, claras y medibles, expresando el rol, la necesidad y el propósito de cada funcionalidad. También deben tener una prioridad definida para facilitar la planificación de los sprints.
 
-Las historias de usuario deben seguir el siguiente formato: ``Como [rol], quiero [tal cosa] para [tal otra cosa]''.
+Cada historia de usuario debe incluir una ponderación en \textit{Story Points}, un número entero que representa el tama\~no relativo de la historia. El criterio para calcular los Story Points debe indicarse explícitamente.
 
-Las épicas deben estructurarse de la siguiente forma:
-\begin{enumerate}
-	\item EPICA 1
-	\begin{enumerate}
-		\item HU1
-		\item HU2
-	\end{enumerate}
-	\item EPICA 2
-	\begin{enumerate}
-		\item HU3
-		\item HU4
-	\end{enumerate}
-	\item EPICA 4
-	\begin{enumerate}
-		\item HU5
-		\item HU6
-	\end{enumerate}
-	\item EPICA 4
-	\begin{enumerate}
-		\item HU7
-		\item HU8
-	\end{enumerate}
-\end{enumerate}
+Las historias deben seguir el formato: ``\textit{Como [rol], quiero [tal cosa] para [tal otra cosa]}''.
 
-Reglas para definir historias de usuario:
+Las \'{e}picas deben estructurarse de la siguiente forma:
 
 \begin{itemize}
-	\item Concisas y claras.
-	\item Expresarlas en términos cuantificables y medibles.
-	\item No dejar margen para interpretaciones ambiguas.
-	\item Indicar claramente su prioridad y si son opcionales.
-	\item Considerar regulaciones y normas vigentes.
-\end{itemize} 
+  \item \textbf{\'{E}pica 1}
+    \begin{itemize}
+      \item HU1
+      \item HU2
+    \end{itemize}
+  \item \textbf{\'{E}pica 2}
+    \begin{itemize}
+      \item HU3
+      \item HU4
+    \end{itemize}
+  \item \textbf{\'{E}pica 3}
+    \begin{itemize}
+      \item HU5
+      \item HU6
+    \end{itemize}
+  \item \textbf{\'{E}pica 4}
+    \begin{itemize}
+      \item HU7
+      \item HU8
+    \end{itemize}
+\end{itemize}
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+\textbf{Reglas para definir historias de usuario:}
+\begin{itemize}
+  \item Ser concisas y claras.
+  \item Expresarlas en términos cuantificables y medibles.
+  \item No dejar margen para interpretaciones ambiguas.
+  \item Indicar claramente su prioridad y si son opcionales.
+  \item Considerar regulaciones y normas vigentes.
+\end{itemize}
 
 \section{7. Criterios de aceptación de historias de usuario}
 \label{sec:criteriosAceptacion}
 
-\begin{consigna}{red}
 Los criterios de aceptación deben establecerse para cada historia de usuario, asegurando que se cumplan las condiciones necesarias para que la funcionalidad sea validada correctamente.
 
-Cada historia de usuario debe incluir criterios de aceptación que definan claramente los parámetros para su aprobación. Estos criterios deben ser medibles, específicos y verificables, y deben permitir validar que la historia cumple con las necesidades del usuario.
+Cada historia debe tener criterios medibles, específicos y verificables. Deben permitir validar que se cumple con las necesidades del usuario.
 
-Las historias de usuario y sus criterios de aceptación deben estructurarse de la siguiente forma:
-\begin{enumerate}
-	\item EPICA 1
-	\begin{enumerate}
-		\item Criterios de aceptación HU1
-		\item Criterios de aceptación HU2
-	\end{enumerate}
-	\item EPICA 2
-	\begin{enumerate}
-		\item Criterios de aceptación HU3
-		\item Criterios de aceptación HU4
-	\end{enumerate}
-	\item EPICA 4
-	\begin{enumerate}
-		\item Criterios de aceptación HU5
-		\item Criterios de aceptación HU6
-	\end{enumerate}
-	\item EPICA 4
-	\begin{enumerate}
-		\item Criterios de aceptación HU7
-		\item Criterios de aceptación HU8
-	\end{enumerate}
-\end{enumerate}
+Se estructuran de forma análoga a las \'{e}picas del backlog:
 
-Reglas para definir criterios de aceptación:
 \begin{itemize}
-	\item Deben ser medibles y verificables.
-	\item Especificar claramente cuándo una historia de usuario se considera completada.
-	\item Incluir condiciones específicas que garanticen la funcionalidad requerida.
-	\item No dejar margen para interpretaciones ambiguas.
-	\item Deben poder probarse mediante tests funcionales o revisiones técnicas.
+  \item \textbf{\'{E}pica 1}
+    \begin{itemize}
+      \item Criterios de aceptación HU1
+      \item Criterios de aceptación HU2
+    \end{itemize}
+  \item \textbf{\'{E}pica 2}
+    \begin{itemize}
+      \item Criterios de aceptación HU3
+      \item Criterios de aceptación HU4
+    \end{itemize}
+  \item \textbf{\'{E}pica 3}
+    \begin{itemize}
+      \item Criterios de aceptación HU5
+      \item Criterios de aceptación HU6
+    \end{itemize}
+  \item \textbf{\'{E}pica 4}
+    \begin{itemize}
+      \item Criterios de aceptación HU7
+      \item Criterios de aceptación HU8
+    \end{itemize}
 \end{itemize}
-\end{consigna}
+
+\textbf{Reglas para definir criterios de aceptación:}
+\begin{itemize}
+  \item Medibles y verificables.
+  \item Especificar cuándo una historia se considera completada.
+  \item Incluir condiciones específicas.
+  \item No ambiguos.
+  \item Probables de testear funcional o técnicamente.
+  \item Mínimo 3 criterios por HU.
+\end{itemize}
 
 \section{8. Fases de CRISP-DM}
-\begin{consigna}{red}
-En esta sección debe definir las 6 fases de la metodología CRISP-DM. Se pueden ayudar con las siguientes preguntas de guía:
-	\begin{enumerate}
-		\item Comprensión del negocio.
-	    ¿Qué objetivo se intenta cumplir? ¿Qué valor agrega la implementación de IA al problema del 			negocio? ¿Cuáles son las métricas de éxito que se utilizarán para medir el impacto del 				producto o servicio?
-		\item Comprensión de los datos
-		¿Con qué tipo de datos se trabajará? ¿Cuáles son las fuentes? ¿Qué cantidad? ¿Qué podría 				decir acerca de su calidad?
-		\item Preparación de los datos 
-		¿Cuáles consideras que son las características clave? ¿Qué tipo de transformaciones serán 				necesarias aplicar?
-	    \item Modelado 
-		¿Qué tipo de problema se busca resolver? ¿Clasificación? ¿Predicción? ¿Qué arquitecturas 				podrían utilizarse?
-	    \item Evaluación del modelo 
-		¿Con qué métricas se evaluará el desempeño del modelo?
-	    \item Despliegue del modelo [opcional]
-		¿Qué tipo de despliegue se llevará a cabo? ¿Con qué herramientas? 
-    \end{enumerate}. 
-La fase 6 es opcional ya que es posible que aún no cuenten con los conocimientos necesarios para definirla.
 
-\end{consigna}
+\begin{enumerate}
+  \item \textbf{Comprensión del negocio:} objetivo, valor agregado de IA, métricas de éxito.
+  \item \textbf{Comprensión de los datos:} tipo, origen, cantidad, calidad.
+  \item \textbf{Preparación de los datos:} características clave, transformaciones necesarias.
+  \item \textbf{Modelado:} tipo de problema, algoritmos posibles.
+  \item \textbf{Evaluación del modelo:} métricas de rendimiento.
+  \item \textbf{Despliegue del modelo (opcional):} tipo de despliegue y herramientas.
+\end{enumerate}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-
-\begin{enumerate}
-\item Grupo de tareas 1 (suma h)
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\end{enumerate}
-\item Grupo de tareas 2 (suma h)
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\end{enumerate}
-\item Grupo de tareas 3 (suma h)
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\item Tarea 4 (tantas h)
-	\item Tarea 5 (tantas h)
-	\end{enumerate}
-\end{enumerate}
-
-Cantidad total de horas: tantas.
-
-\textbf{¡Importante!:} la unidad de horas es h y va separada por espacio del número. Es incorrecto escribir ``23hs".
-
-\textbf{Se recomienda que no haya ninguna tarea que lleve más de 40 h.} De ser así se recomienda dividirla en tareas de menor duración.
-
-\end{consigna}
-
-\section{10. Diagrama de Activity On Node}
-\label{sec:AoN}
-
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior.
-
-Una herramienta simple para desarrollar los diagramas es el Draw.io (\url{https://app.diagrams.net/}).
-\href{https://app.diagrams.net}{Draw.io}
-
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
-\caption{Diagrama de \textit{Activity on Node}.}
-\label{fig:AoN}
-\end{figure}
-
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semi críticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color.
-
-\end{consigna}
-
-\section{11. Diagrama de Gantt}
-\label{sec:gantt}
-
-\begin{consigna}{red}
-Existen muchos programas y recursos \textit{online} para hacer diagramas de Gantt, entre los cuales destacamos:
+A partir de cada HU, descomponer en tareas concretas, técnicas y medibles:
 
 \begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
+  \item Duración estimada: entre 2 y 8 h. Evitar tareas genéricas.
+  \item Si una tarea excede 8 h, dividirla.
+  \item Indicar prioridad relativa (Alta, Media, Baja).
 \end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. 
-En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-Las fechas pueden ser calculadas utilizando alguna de las herramientas antes citadas. Sin embargo, el siguiente ejemplo
-fue elaborado utilizando 
-\href{https://docs.google.com/spreadsheets/d/1fBz8NhSpc4tkkhz3KjJCbh1nR_ltDkfEcZi4tZXduqs}{esta hoja de cálculo}.
-
-Es importante destacar que el ancho del diagrama estará dado por la longitud del texto utilizado para las tareas 
-(Ejemplo: tarea 1, tarea 2, etcétera) y el valor \textit{x unit}. Para mejorar la apariencia del diagrama, es necesario
-ajustar este valor y, quizás, acortar los nombres de las tareas.
-
-\begin{figure}[htpb]
-  \begin{center}
-    \begin{ganttchart}[
-      time slot unit=day,
-      time slot format=isodate,
-      x unit=0.038cm,
-      y unit title=0.7cm,
-      y unit chart=0.6cm,
-      milestone/.append style={xscale=4}
-      ]{2021-03-05}{2021-12-16}
-      \gantttitlecalendar*{2021-03-05}{2021-12-16}{year} \\
-      \gantttitlecalendar*{2021-03-05}{2021-12-16}{month} \\
-      \ganttgroup{Duración Total}{2021-03-05}{2021-12-16} \\
-      %%%%%%%%%%%%%%%%%Organización
-      \ganttgroup{Organización}{2021-03-05}{2021-04-16} \\
-      \ganttbar{Planificación del proyecto}{2021-03-05}{2021-04-15} \\
-      %%%%%%%%%%%%%%%%%Ejecución
-      \ganttgroup{Ejecución}{2021-04-16}{2021-10-21} \\
-      \ganttbar{Tarea 1}{2021-04-16}{2021-04-29} \\
-      \ganttbar{Tarea 2}{2021-04-30}{2021-05-13} \\
-      \ganttbar{Tarea 3}{2021-05-14}{2021-05-27} \\
-      \ganttbar{Tarea 4}{2021-05-28}{2021-07-12} \\
-      \ganttbar{Tarea 5}{2021-07-13}{2021-08-09} \\
-      \ganttbar{Tarea 6}{2021-08-10}{2021-09-23} \\
-      \ganttbar{Tarea 7}{2021-09-24}{2021-09-30} \\
-      \ganttbar{Tarea 8}{2021-10-01}{2021-10-14} \\
-      \ganttbar{Tarea 9}{2021-10-15}{2021-10-21} \\
-      % %%%%%%%%%%%%%%%%%Finalización
-      \ganttgroup{Finalización}{2021-10-22}{2021-12-16} \\
-      \ganttbar{Memoria v1}{2021-10-22}{2021-11-04} \\
-      \ganttbar{Memoria v2}{2021-11-05}{2021-11-18} \\
-      \ganttbar{Memoria final}{2021-11-19}{2021-12-02} \\
-      % La fecha del siguiente milestone es la fecha en que terminamos la memoria
-      \ganttmilestone{Enviar memoria al director}{2021-12-02} \\
-      \ganttbar{Elaborar la presentación}{2021-12-03}{2021-12-16} \\
-      \ganttmilestone{Ensayo de la presentación}{2021-12-16} \\
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \end{ganttchart}
-  \end{center}
-  \caption{Diagrama de gantt de ejemplo}
-  \label{fig:gantt}
-\end{figure}
-
-
-\begin{landscape}
-\begin{figure}[htpb]
-\centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt (apaisado).} %Modificar este título acorde.
-\label{fig:diagGantt}
-\end{figure}
-
-\end{landscape}
-
-\end{consigna}
-
-
-\section{12. Presupuesto detallado del proyecto}
-\label{sec:presupuesto}
-
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-Incluir la aclaración de si se emplea como moneda el peso argentino (ARS) o si se usa moneda extranjera (USD, EUR, etc). Si es en moneda extranjera se debe indicar la tasa de conversión respecto a la moneda local en una fecha dada.
-
-\end{consigna}
 
 \begin{table}[htpb]
 \centering
-\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
+\begin{tabularx}{\linewidth}{@{}|X|X|c|c|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
-   \\ \hline
-\end{tabularx}%
+Historia de usuario & Tarea técnica & Estimación & Prioridad \\ \hline
+HU1 & Tarea 1 HU1 & 6 h & Alta \\ \hline
+HU1 & Tarea 2 HU1 & 8 h & Alta \\ \hline
+HU2 & Tarea 1 HU2 & 5 h & Media \\ \hline
+HU2 & Tarea 2 HU2 & 6 h & Alta \\ \hline
+... & ... & ... & ... \\ \hline
+\end{tabularx}
 \end{table}
+
+\section{10. Diagrama de Gantt}
+\label{sec:gantt}
+
+Representar visualmente la planificación temporal de:
+\begin{itemize}
+  \item Tareas técnicas derivadas de HU.
+  \item Tareas no técnicas: planificación, escritura, defensa, etc.
+\end{itemize}
+
+\textbf{Requisitos:}
+\begin{itemize}
+  \item Eje vertical: tareas.
+  \item Eje horizontal: semanas o fechas.
+  \item Colores distintos para HU vs. generales.
+  \item Coincidir fechas con acta constitutiva.
+\end{itemize}
+
+\section{11. Planificación de Sprints}
+
+Organizar tareas en sprints de 1 a 3 semanas.
+\begin{itemize}
+  \item Relacionar sprints con HU y tareas.
+  \item Incluir horas estimadas, responsable y \% completado.
+  \item Planificar entre 10 y 12 sprints.
+\end{itemize}
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\linewidth}{@{}|X|X|c|X|c|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0}
+Sprint & HU o fase & Tarea & Horas / SP & \% Completado \\ \hline
+Sprint 0 & Planificación & Definir alcance y cronograma & 10 h & 100\% \\ \hline
+Sprint 1 & HU1 & Tarea 1 HU1 & 6 h / 3 SP & 0\% \\ \hline
+... & ... & ... & ... & ... \\ \hline
+\end{tabularx}
+\end{table}
+
+\section{12. Normativa y cumplimiento de datos (gobernanza)}
+
+Analizar:
+\begin{itemize}
+  \item Si los datos están regulados por GDPR, Ley 25.326, HIPAA u otras.
+  \item Si requieren consentimiento explícito.
+  \item Si tienen licencia pública, privada o restricción de uso.
+\end{itemize}
+
+Esto permite evaluar la viabilidad legal y ética del proyecto.
+
 
 
 \section{13. Gestión de riesgos}
