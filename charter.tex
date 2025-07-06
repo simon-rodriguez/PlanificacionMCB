@@ -5,32 +5,33 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Monitoreo y predicción in-situ de propiedades mecánicas en fabricación aditiva de fibra continua con materiales compuestos} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
 %\posgrado{Carrera de Especialización en Internet de las Cosas} 
-\posgrado{Carrera de Especialización en Inteligencia Artificial}
+%\posgrado{Carrera de Especialización en Inteligencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
 %\posgrado{Maestría en Internet de las cosas}
+\posgrado{Maestría en Computación de Borde}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
-\autor{Título y Nombre del autor}
+\autor{Ing. Simón A. Rodríguez Alzuru}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Título y Nombre del director}
-\pertenenciaDirector{pertenencia} 
+\director{\textcolor{red}{Título y Nombre del director}}
+\pertenenciaDirector{\textcolor{red}{pertenencia}} 
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{M.Sc. Jan Seiffert}
+\empresaCliente{Decanato Materiales Compuestos (TUM)}
  
-\fechaINICIO{30 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{24 de junio de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{20 de agosto de 2025} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{\textcolor{red}{xx de mayo} de 2026}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -59,7 +60,7 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 5 inclusive                & {día} de {mes} de 202X \\ \hline
+1      & Se completa hasta el punto 5 inclusive                & {08} de {julio} de 2025 \\ \hline
 %2      & Se completa hasta el punto 9 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -85,7 +86,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{el monitoreo en tiempo real de las condiciones de impresión y la predicción in-situ de las propiedades mecánicas de las partes fabricadas durante el proceso de impresión}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -106,52 +107,43 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
+El proyecto se realiza para el Decanato de materiales compuestos de la escuela de ingeniería y diseño de la Universidad Técnica de Múnich en Alemania. El decanato cuenta con...
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
+El decanato desarrolla nuevos métodos y conceptos para la fabricación aditiva continua reforzada por fibra. Uno de los métodos investigados es el proceso de fabricación con filamento fundido (FFF), también conocido como modelado por deposición fundida. Este es un proceso ideal para producir prototipos funcionales ligeros que permite, por ejemplo, la integración de sensores o de refuerzos orientados a una carga al utilizar fibras reforzantes. Integrar adecuadamente estas fibras y sensores es esencial para la producción de componentes estructurales. Por lo tanto, es crucial tener un proceso de monitoreo automatizado durante la producción de dichos componentes para validar su calidad y generar un gemelo digital que pueda ser utilizado para predecir propiedades mecánicas.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+Actualmente se utilizan métodos de elementos finitos para el análisis y predicción de propiedades mecánicas de las partes impresas; una actividad que requiere gran poder de cómputo, consume mucho tiempo y, por lo tanto, no se hace en tiempo real. Este proyecto busca una alternativa para predecir las propiedades mecánicas desde el primer instante del proceso de impresión, implementando además la visualización y monitoreo continuos del proceso incluyendo las desviaciones de la fibra y la predicción de las propiedades.
 
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
-
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+En la figura \ref{fig:procesoActual} se muestra el estado actual del sistema y el proceso que se desarrolló en un trabajo previo dentro del decanato y sobre el cual se basa el presente proyecto. Se puede observar que se cuenta con una impresora 3D multiherramienta con capacidad de visión por computadora a través de una cámara y Raspberry Pi. La herramienta de visión captura imágenes automáticamente de la deposición de la fibra, de donde puede obtenerse información sobre la posición de la fibra y sus defectos. Esta información es controlada localmente por una PC conectada a la impresora y a la herramienta de visión, y almacenada localmente en la misma.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema.}
-\label{fig:diagBloques}
+\includegraphics[width=.5\textwidth]{Figuras/proceso-Actual.png}
+\caption{Diagrama del proceso actual.}
+\label{fig:procesoActual}
 \end{figure}
 
-\vspace{25px}
+El sistema almacena las imágenes capturadas para su análisis posterior y no posee capacidades para realizar un análisis en tiempo real de éstas ni analiza las propiedades mecánicas de las partes impresas. El sistema tampoco incluye el monitoreo en tiempo real del proceso de impresión y el acceso al panel de control se realiza únicamente de forma local. Por último, no existen automatizaciones para el proceso de impresión.
 
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
+Para mejorar el proceso y solucionar estas brechas, se propone analizar dos métodos de inteligencia artificial diferentes para predecir propiedades mecánicas (p.ej. rigidez, resistencia, coeficiente de Poisson) en base a imágenes. Estos modelos deben entrenarse con las imágenes disponibles, parámetros de impresión, resultados experimentales, y datos de simulación. Posteriormente, los resultados se evalúan con datos de prueba nuevos y se comparan con resultados experimentales y predicciones por simulación, para finalmente elegir el mejor método a implementar.
 
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
+Adicionalmente, para mejorar las capacidades de control y monitoreo del proceso de impresión se propone implementar la visualización en tiempo real del proceso en un \textit{dashboard} que incluya la predicción de las propiedades mecánicas por IA. Por último, para facilitar el acceso al panel, se propone agregar al sistema el envío de telemetría durante el proceso de impresión.
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+En la figura \ref{fig:procesoPropuesta} se observa el nuevo proceso propuesto que incluye la predicción de las propiedades mecánicas, el monitoreo en tiempo real del proceso de impresión, y la transmisión de telemetría para su consumo remotamente. 
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.8\textwidth]{Figuras/proceso-Propuesto.png}
+\caption{Propuesta del proyecto.}
+\label{fig:procesoPropuesta}
+\end{figure}
+
+Se propone segmentar los datos en distintos medios de almacenamiento (imágenes, propiedades de impresión, predicciones, etc.) para facilitar su administración y acceso. Se puede observar además que el \textit{dashboard} para acceso remoto consumirá datos tanto de las bases de datos (por ejemplo, históricos), como también directamente del sistema de monitoreo y control a través de la transmisión de los últimos datos de telemetría.
+
+Este trabajo se realiza en las instalaciones de la Universidad Técnica de Múnich en el área de laboratorio dispuesta por el decanato para la impresión de partes por el método de fabricación con filamento fundido, así como dentro de la red científica interna de Múnich (MWN, o \textit{Münchener Wissenschafts Netz)}.
+
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
-
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -160,90 +152,72 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Cliente       & \clientename      &\empclientename	& Líder IA y Digitalización      	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Usuario final & Estudiantes y Personal                  & TUM             	&  -      	\\ \hline
 \end{tabularx}
 \end{table}
-
-El Director suele ser uno de los orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
 
 Es deseable listar a continuación las principales características de cada interesado.
  
 Por ejemplo:
 \begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+	\item Orientador: \textcolor{red}{pendiente a definir.}
+	\item Cliente: \clientename{} es el líder del tema inteligencia artificial y digitalización del decanato de materiales compuestos en la TUM e investigador/doctorando en el mismo. Se encarga de liderar y desarrollar investigaciones en esta área. Conoce muy bien los temas de materiales compuestos y mecánica aeroespacial, pero su conocimiento en IoT no es profundo. Apoya el proyecto con conocimiento técnico y soporte a la investigación, además de acceso a los recursos de la universidad.
+	\item Usuario final: si bien los usuarios finales actuales son estudiantes y personal que hace vida en el decanato de materiales compuestos, se puede expandir a usuarios finales dentro de la industria.
 \end{itemize}
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+El objetivo de este trabajo es utilizar métodos de inteligencia artificial para predecir in-situ, y durante el proceso de impresión, propiedades mecánicas de partes fabricadas por fabricación aditiva reforzada con fibra. Así como el monitoreo en tiempo real de forma local y a distancia del proceso de impresión. 
 
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
-
 El proyecto incluye:
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
+	\item Análisis de los datos disponibles, procesos y códigos.
+	\item Selección de un método de inteligencia artificial para predecir las propiedades mecánicas de partes hechas por fabricación aditiva reforzada con fibra.
 		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
+		\item Preselección de métodos diferentes para la predicción de las propiedades mecánicas.
+        \item Preparación de los \textit{datasets} para el entrenamiento de los modelos con apoyo del cliente.
+		\item Entrenamiento de los modelos preseleccionados con datos disponibles: imágenes segmentadas, parámetros de impresión, resultados experimentales, datos de simulación.
+		\item Evaluación de los modelos de inteligencia artificial con resultados de pruebas experimentales y predicciones por simulación.
+        \item Selección del mejor método de inteligencia artificial.
 		\end{itemize}
-	\item ...
+    \item Predicción de propiedades mecánicas durante el proceso de impresión en base a imágenes capturadas y datos de impresión.
+	\item Mejora de la interfaz de usuario existente para mostrar los datos de la predicción en tiempo real.
+    \item Transmisión en tiempo real de datos de telemetría del proceso de impresión.
+    \item Acceso remoto a datos de telemetría en tiempo real e histórico de datos.
+    \item Reestructuración de la arquitectura del sistema para almacenar datos históricos y permitir procesos de automatización y monitoreo avanzados.
+    \item Reestructuración del proceso y flujo de datos.
+    \item Propuesta de automatización en base a datos del proceso de impresión.
 	
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+El presente proyecto no incluye la preparación y configuración del equipo de impresión ni de la herramienta de captura de imágenes. En caso de ser necesaria la captura de más datos o imágenes, el cliente se encargará de obtener todos los datos necesarios para el entrenamiento y validación de los modelos, incluyendo resultados de pruebas o simulaciones. 
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+Por último, pueden existir modificaciones al alcance del proyecto debido a nuevos descubrimientos durante la ejecución del trabajo, en cuyo caso, serán analizadas individualmente, estimado su impacto, y se tomará una decisión al respecto.
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del proyecto se supone lo siguiente:
 
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+	\item Se dispone del acceso a las instalaciones donde se encuentra el sistema (impresora, herramienta de visión, PC, código, etc.).
+	\item Se cuenta con acceso a todos los datos necesarios para el entrenamiento y evaluación de los modelos de inteligencia artificial, y en caso de faltar o requerir más datos, el cliente dispondrá de los mismos.
+	\item Se tiene acceso a equipos para el entrenamiento y validación de los modelos. El equipo para la inferencia/predicción de las propiedades mecánicas también se encuentra disponible o puede conseguirse antes de finalizar el proyecto.
+    \item El cliente dará apoyo y supervisión in-situ durante el proyecto.
+    \item El proyecto se realiza a tiempo parcial de forma híbrida (combinación in-situ y remoto).
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{6. Product Backlog}
 \label{sec:backlog}
