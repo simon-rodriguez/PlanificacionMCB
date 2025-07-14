@@ -61,12 +61,13 @@
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 5 inclusive                & {08} de {julio} de 2025 \\ \hline
-%2      & Se completa hasta el punto 9 inclusive
+2      & Se completa hasta el punto 9 inclusive                & {15} de {julio} de 2026 \\ \hline
+%3      & Se completa hasta el punto 12 inclusive                & {día} de {mes} de 202X \\ \hline
+%4      & Se completa el plan	                                 
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & {día} de {mes} de 202X \\ \hline
-%3      & Se completa hasta el punto 12 inclusive                & {día} de {mes} de 202X \\ \hline
-%4      & Se completa el plan	                                 & {día} de {mes} de 202X \\ \hline
+
 
 % Si hay más correcciones pasada la versión 4 también se deben especificar acá
 
@@ -86,7 +87,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{el monitoreo en tiempo real de las condiciones de impresión y la predicción in-situ de las propiedades mecánicas de las partes fabricadas durante el proceso de impresión}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en el monitoreo en tiempo real de las condiciones de impresión y la predicción in situ de las propiedades mecánicas de las partes fabricadas durante el proceso de impresión. El trabajo tendrá un presupuesto preliminar estimado de 663 horas, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -107,13 +108,13 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-El proyecto se realiza para el Decanato de materiales compuestos de la escuela de ingeniería y diseño de la Universidad Técnica de Múnich en Alemania. El decanato cuenta con...
+El proyecto se realiza para el Decanato de materiales compuestos de la escuela de ingeniería y diseño de la Universidad Técnica de Múnich en Alemania, el cual investiga el desarrollo de nuevos métodos y conceptos para la fabricación aditiva continua reforzada por fibra. Uno de los métodos investigados es el proceso de fabricación con filamento fundido (FFF), también conocido como modelado por deposición fundida. Este proceso es ideal para producir prototipos funcionales ligeros y permite, por ejemplo, la integración de sensores o de refuerzos orientados a una carga al utilizar fibras reforzantes. 
 
-El decanato desarrolla nuevos métodos y conceptos para la fabricación aditiva continua reforzada por fibra. Uno de los métodos investigados es el proceso de fabricación con filamento fundido (FFF), también conocido como modelado por deposición fundida. Este es un proceso ideal para producir prototipos funcionales ligeros que permite, por ejemplo, la integración de sensores o de refuerzos orientados a una carga al utilizar fibras reforzantes. Integrar adecuadamente estas fibras y sensores es esencial para la producción de componentes estructurales. Por lo tanto, es crucial tener un proceso de monitoreo automatizado durante la producción de dichos componentes para validar su calidad y generar un gemelo digital que pueda ser utilizado para predecir propiedades mecánicas.
+Integrar adecuadamente estas fibras y sensores es esencial para la producción de componentes estructurales. Por lo tanto, es crucial tener un proceso de monitoreo automatizado durante la producción de dichos componentes para validar su calidad y generar un gemelo digital que pueda ser utilizado para predecir las propiedades mecánicas de las partes impresas.
 
-Actualmente se utilizan métodos de elementos finitos para el análisis y predicción de propiedades mecánicas de las partes impresas; una actividad que requiere gran poder de cómputo, consume mucho tiempo y, por lo tanto, no se hace en tiempo real. Este proyecto busca una alternativa para predecir las propiedades mecánicas desde el primer instante del proceso de impresión, implementando además la visualización y monitoreo continuos del proceso incluyendo las desviaciones de la fibra y la predicción de las propiedades.
+Actualmente se utilizan métodos de elementos finitos para el análisis y predicción de propiedades mecánicas de las partes impresas; una actividad que requiere gran poder de cómputo, consume mucho tiempo y, por lo tanto, no se realiza en tiempo real. Este proyecto busca una alternativa para predecir las propiedades mecánicas de las partes impresas desde el primer instante del proceso de impresión. Se implementa, además, una interfaz para la visualización y monitoreo continuos del proceso, que incluye las desviaciones de la fibra y los resultados de predicción de sus propiedades.
 
-En la figura \ref{fig:procesoActual} se muestra el estado actual del sistema y el proceso que se desarrolló en un trabajo previo dentro del decanato y sobre el cual se basa el presente proyecto. Se puede observar que se cuenta con una impresora 3D multiherramienta con capacidad de visión por computadora a través de una cámara y Raspberry Pi. La herramienta de visión captura imágenes automáticamente de la deposición de la fibra, de donde puede obtenerse información sobre la posición de la fibra y sus defectos. Esta información es controlada localmente por una PC conectada a la impresora y a la herramienta de visión, y almacenada localmente en la misma.
+En la figura \ref{fig:procesoActual} se muestra el estado actual del sistema y el proceso que se desarrolló en un trabajo previo dentro del decanato y sobre el cual se basa el presente proyecto. Se puede observar que se cuenta con una impresora 3D multiherramienta con capacidad de visión por computadora a través de una cámara y una Raspberry Pi. La herramienta de visión captura imágenes automáticamente de la deposición de la fibra, de donde puede obtenerse información sobre la posición de la fibra y sus defectos. Una computadora conectada a la impresora y a la herramienta de visión controla el proceso de captura de imágenes y las almacena localmente.
 
 \begin{figure}[htpb]
 \centering 
@@ -124,11 +125,11 @@ En la figura \ref{fig:procesoActual} se muestra el estado actual del sistema y e
 
 El sistema almacena las imágenes capturadas para su análisis posterior y no posee capacidades para realizar un análisis en tiempo real de éstas ni analiza las propiedades mecánicas de las partes impresas. El sistema tampoco incluye el monitoreo en tiempo real del proceso de impresión y el acceso al panel de control se realiza únicamente de forma local. Por último, no existen automatizaciones para el proceso de impresión.
 
-Para mejorar el proceso y solucionar estas brechas, se propone analizar dos métodos de inteligencia artificial diferentes para predecir propiedades mecánicas (p.ej. rigidez, resistencia, coeficiente de Poisson) en base a imágenes. Estos modelos deben entrenarse con las imágenes disponibles, parámetros de impresión, resultados experimentales, y datos de simulación. Posteriormente, los resultados se evalúan con datos de prueba nuevos y se comparan con resultados experimentales y predicciones por simulación, para finalmente elegir el mejor método a implementar.
+Para mejorar el proceso y solucionar estas brechas, se propone analizar dos métodos de inteligencia artificial diferentes para predecir propiedades mecánicas (p.ej. rigidez, resistencia, coeficiente de Poisson) en base a imágenes. Estos modelos deben entrenarse con las imágenes disponibles, parámetros de impresión, resultados experimentales y datos de simulación. Posteriormente, los resultados se evalúan con datos de prueba nuevos y se comparan con resultados experimentales y predicciones por simulación, para finalmente elegir el mejor método a implementar.
 
 Adicionalmente, para mejorar las capacidades de control y monitoreo del proceso de impresión se propone implementar la visualización en tiempo real del proceso en un \textit{dashboard} que incluya la predicción de las propiedades mecánicas por IA. Por último, para facilitar el acceso al panel, se propone agregar al sistema el envío de telemetría durante el proceso de impresión.
 
-En la figura \ref{fig:procesoPropuesta} se observa el nuevo proceso propuesto que incluye la predicción de las propiedades mecánicas, el monitoreo en tiempo real del proceso de impresión, y la transmisión de telemetría para su consumo remotamente. 
+En la figura \ref{fig:procesoPropuesta} se observa el nuevo proceso propuesto que incluye la predicción de las propiedades mecánicas, el monitoreo en tiempo real del proceso de impresión y la transmisión de telemetría para su consumo remoto. 
 
 \begin{figure}[htpb]
 \centering 
@@ -159,12 +160,9 @@ Usuario final & Estudiantes y Personal                  & TUM             	&  - 
 \end{tabularx}
 \end{table}
 
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
 	\item Orientador: \textcolor{red}{pendiente a definir.}
-	\item Cliente: \clientename{} es el líder del tema inteligencia artificial y digitalización del decanato de materiales compuestos en la TUM e investigador/doctorando en el mismo. Se encarga de liderar y desarrollar investigaciones en esta área. Conoce muy bien los temas de materiales compuestos y mecánica aeroespacial, pero su conocimiento en IoT no es profundo. Apoya el proyecto con conocimiento técnico y soporte a la investigación, además de acceso a los recursos de la universidad.
+	\item Cliente: \clientename{} es el líder del tema inteligencia artificial y digitalización del decanato de materiales compuestos en la TUM e investigador/doctorando. Se encarga de liderar y desarrollar investigaciones en esta área. Conoce muy bien los temas de materiales compuestos y mecánica aeroespacial, pero su conocimiento en IoT no es profundo. Apoya el proyecto con conocimiento técnico y soporte a la investigación, además de acceso a los recursos de la universidad.
 	\item Usuario final: si bien los usuarios finales actuales son estudiantes y personal que hace vida en el decanato de materiales compuestos, se puede expandir a usuarios finales dentro de la industria.
 \end{itemize}
 
@@ -172,7 +170,7 @@ Por ejemplo:
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-El objetivo de este trabajo es utilizar métodos de inteligencia artificial para predecir in-situ, y durante el proceso de impresión, propiedades mecánicas de partes fabricadas por fabricación aditiva reforzada con fibra. Así como el monitoreo en tiempo real de forma local y a distancia del proceso de impresión. 
+El objetivo de este trabajo es utilizar métodos de inteligencia artificial para predecir in-situ, y durante el proceso de impresión, propiedades mecánicas de partes impresas por fabricación aditiva reforzada con fibra. Así como el monitoreo en tiempo real de forma local y a distancia del proceso de impresión. 
 
 
 \section{4. Alcance del proyecto}
@@ -192,7 +190,7 @@ El proyecto incluye:
     \item Predicción de propiedades mecánicas durante el proceso de impresión en base a imágenes capturadas y datos de impresión.
 	\item Mejora de la interfaz de usuario existente para mostrar los datos de la predicción en tiempo real.
     \item Transmisión en tiempo real de datos de telemetría del proceso de impresión.
-    \item Acceso remoto a datos de telemetría en tiempo real e histórico de datos.
+    \item Acceso remoto a datos de telemetría en tiempo real y datos históricos.
     \item Reestructuración de la arquitectura del sistema para almacenar datos históricos y permitir procesos de automatización y monitoreo avanzados.
     \item Reestructuración del proceso y flujo de datos.
     \item Propuesta de automatización en base a datos del proceso de impresión.
@@ -201,7 +199,7 @@ El proyecto incluye:
 
 El presente proyecto no incluye la preparación y configuración del equipo de impresión ni de la herramienta de captura de imágenes. En caso de ser necesaria la captura de más datos o imágenes, el cliente se encargará de obtener todos los datos necesarios para el entrenamiento y validación de los modelos, incluyendo resultados de pruebas o simulaciones. 
 
-Por último, pueden existir modificaciones al alcance del proyecto debido a nuevos descubrimientos durante la ejecución del trabajo, en cuyo caso, serán analizadas individualmente, estimado su impacto, y se tomará una decisión al respecto.
+Por último, pueden existir modificaciones al alcance del proyecto debido a nuevos descubrimientos durante la ejecución del trabajo, en cuyo caso, serán analizadas individualmente, estimado su impacto, y se tomará una decisión al respecto con el acuerdo de todas las partes interesadas.
 
 
 \section{5. Supuestos del proyecto}
@@ -217,265 +215,411 @@ Para el desarrollo del proyecto se supone lo siguiente:
     \item El proyecto se realiza a tiempo parcial de forma híbrida (combinación in-situ y remoto).
 \end{itemize}
 
-
-
-\section{6. Product Backlog}
-\label{sec:backlog}
-
-El Product Backlog debe organizarse en cuatro \textbf{\textit{\'{e}picas}} fundamentales del proyecto. Cada \'{e}pica debe contener al menos dos historias de usuario que describan funcionalidades clave.
-
-El Product Backlog debe permitir interpretar cómo será el proyecto y su funcionalidad. Se deben indicar claramente las prioridades entre las historias de usuario y si hay alguna opcional.
-
-Las historias de usuario deben ser breves, claras y medibles, expresando el rol, la necesidad y el propósito de cada funcionalidad. También deben tener una prioridad definida para facilitar la planificación de los sprints.
-
-Cada historia de usuario debe incluir una ponderación en \textit{Story Points}, un número entero que representa el tama\~no relativo de la historia. El criterio para calcular los Story Points debe indicarse explícitamente.
-
-Las historias deben seguir el formato: ``\textit{Como [rol], quiero [tal cosa] para [tal otra cosa]}''.
-
-Las \'{e}picas deben estructurarse de la siguiente forma:
-
-\begin{itemize}
-  \item \textbf{\'{E}pica 1}
-    \begin{itemize}
-      \item HU1
-      \item HU2
-    \end{itemize}
-  \item \textbf{\'{E}pica 2}
-    \begin{itemize}
-      \item HU3
-      \item HU4
-    \end{itemize}
-  \item \textbf{\'{E}pica 3}
-    \begin{itemize}
-      \item HU5
-      \item HU6
-    \end{itemize}
-  \item \textbf{\'{E}pica 4}
-    \begin{itemize}
-      \item HU7
-      \item HU8
-    \end{itemize}
-\end{itemize}
-
-\textbf{Reglas para definir historias de usuario:}
-\begin{itemize}
-  \item Ser concisas y claras.
-  \item Expresarlas en términos cuantificables y medibles.
-  \item No dejar margen para interpretaciones ambiguas.
-  \item Indicar claramente su prioridad y si son opcionales.
-  \item Considerar regulaciones y normas vigentes.
-\end{itemize}
-
-\section{7. Criterios de aceptación de historias de usuario}
-\label{sec:criteriosAceptacion}
-
-Los criterios de aceptación deben establecerse para cada historia de usuario, asegurando que se cumplan las condiciones necesarias para que la funcionalidad sea validada correctamente.
-
-Cada historia debe tener criterios medibles, específicos y verificables. Deben permitir validar que se cumple con las necesidades del usuario.
-
-Se estructuran de forma análoga a las \'{e}picas del backlog:
-
-\begin{itemize}
-  \item \textbf{\'{E}pica 1}
-    \begin{itemize}
-      \item Criterios de aceptación HU1
-      \item Criterios de aceptación HU2
-    \end{itemize}
-  \item \textbf{\'{E}pica 2}
-    \begin{itemize}
-      \item Criterios de aceptación HU3
-      \item Criterios de aceptación HU4
-    \end{itemize}
-  \item \textbf{\'{E}pica 3}
-    \begin{itemize}
-      \item Criterios de aceptación HU5
-      \item Criterios de aceptación HU6
-    \end{itemize}
-  \item \textbf{\'{E}pica 4}
-    \begin{itemize}
-      \item Criterios de aceptación HU7
-      \item Criterios de aceptación HU8
-    \end{itemize}
-\end{itemize}
-
-\textbf{Reglas para definir criterios de aceptación:}
-\begin{itemize}
-  \item Medibles y verificables.
-  \item Especificar cuándo una historia se considera completada.
-  \item Incluir condiciones específicas.
-  \item No ambiguos.
-  \item Probables de testear funcional o técnicamente.
-  \item Mínimo 3 criterios por HU.
-\end{itemize}
-
-\section{8. Fases de CRISP-DM}
+\section{6. Requerimientos}
+\label{sec:requerimientos}
 
 \begin{enumerate}
-  \item \textbf{Comprensión del negocio:} objetivo, valor agregado de IA, métricas de éxito.
-  \item \textbf{Comprensión de los datos:} tipo, origen, cantidad, calidad.
-  \item \textbf{Preparación de los datos:} características clave, transformaciones necesarias.
-  \item \textbf{Modelado:} tipo de problema, algoritmos posibles.
-  \item \textbf{Evaluación del modelo:} métricas de rendimiento.
-  \item \textbf{Despliegue del modelo (opcional):} tipo de despliegue y herramientas.
+	\item Requerimientos funcionales:
+		\begin{enumerate}
+			\item El sistema debe poder predecir las propiedades mecánicas de una parte impresa durante el proceso de impresión.
+			\item El sistema debe poder procesar la información de cada una de las capas de impresión (imágenes, segmentación, propiedades y condiciones de impresión) para realizar la predicción de las propiedades mecánicas de la pieza.
+			\item El usuario no debe realizar ninguna operación especial para obtener los resultados de las predicciones de la pieza que se está imprimiendo.
+            \item El sistema debe almacenar los resultados históricos de predicción para que el usuario pueda visualizarlos cuando lo desee.
+            \item El sistema debe integrarse a la interfaz local existente y al proceso del sistema actual sin realizar cambios fundamentales al proceso de impresión (de ser posible).
+            \item El usuario debe poder acceder remotamente a los resultados en directo, vía alguna interfaz simplificada.
+            \item El usuario debe poder acceder remotamente a los resultados históricos.
+		\end{enumerate}
+    \item Requerimientos de la interfaz:
+        \begin{enumerate}
+            \item La interfaz debe presentar los resultados de predicción capa a capa y actualizarse a medida que se obtengan nuevas predicciones de la capa siguiente.
+            \item La interfaz debe permitir al usuario revisar las predicciones capa a capa de una pieza en particular, desde la primera predicción hasta la predicción final.
+            \item La interfaz debe permitir remota debe tener una forma de acceder a la interfaz de control remoto de la impresora.
+            \item La interfaz debe permitir el acceso a la interfaz de control de la cámara y el sistema de segmentación de imágenes.
+            \item \textit{Opcional} - La interfaz que informa sobre los resultados de predicción debe integrarse a la interfaz existente de control del sistema de impresión.
+        \end{enumerate}
+	\item Requerimientos de documentación:
+		\begin{enumerate}
+			\item Se requiere un documento que explique el funcionamiento del modelo de predicción por IA.
+			\item Se requiere un documento que explique el funcionamiento de la interfaz.
+            \item Se requieren diagramas de alto nivel del sistema propuesto, el flujo de datos, y las interacciones entre los componentes.
+		\end{enumerate}
+	\item Requerimientos de diseño:
+    	\begin{enumerate}
+			\item Se debe diferenciar el almacenamiento de los datos por tipo, categoría y uso. Para esto se deben definir las opciones de almacenamiento adecuadas considerando las restricciones del proyecto en cuanto al manejo de datos.
+            \item Se deben estudiar los protocolos de comunicación actuales entre los distintos componentes y determinar si un cambio es necesario. En cuyo caso, considerar implementar un protocolo de comunicación entre el sistema de impresión y la computadora local que cubra las necesidades de transferencia de datos para el modelo de predicción. 
+            \item Se debe desarrollar e implementar un concepto para el proceso y flujo de datos para el procesamiento de imágenes de entrada para el modelo de predicción.
+            \item Se debe desarrollar e implementar un concepto para el proceso y flujo de datos para el sistema de predicción.
+            \item Se debe implementar un sistema de publicación de predicciones para que las interfaces puedan acceder a la información.
+			\item \textit{Opcional} - El sistema permite la administración de \textit{pipelines} de entrenamiento, validación y despliegue de modelos de IA para el desarrollo y mejora continua del sistema.
+		\end{enumerate}
 \end{enumerate}
+
+\section{7. Historias de usuarios (\textit{Product backlog})}
+\label{sec:backlog}
+
+El cálculo de \textit{story points} se realiza considerando tres niveles (1, 3, 5) en base a la cantidad de trabajo a realizar (dificultad), la complejidad de la tarea y los riesgos existentes. La suma de los puntos redondeada al número de la serie de Fibonacci más cercano (3, 5, 8, 13) entre las tres categorías será el total de \textit{story points} para esa historia. En caso de que haya equidistancia entre dos números, se tomará el menor.
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\linewidth}{@{}|c|X|X|c|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0}
+Puntaje & Dificultad & Complejidad & Riesgo \\ \hline
+1 & No requiere mucha preparación & Sistema es simple o con pocas interacciones con otros sistemas. & Bajo \\ \hline
+3 & Se requiere algo de preparación y/o experimentación. & El sistema en parcialmente complejo o existen varias interfaces/interacciones. & Medio \\ \hline
+5 & Requiere mucha investigación y/o experimentación. & El sistema es complejo o existen muchas interfaces/interacciones. & Alto \\ \hline
+\end{tabularx}
+\end{table}
+
+A continuación se detallan las épicas del proyecto y las historias de usuario relacionadas. La numeración de la lista sirve de referencia para identificar las historias de usuario.
+
+\begin{enumerate}
+  \item \textbf{\'{E}pica 1} - Preparación de Datos
+    \begin{enumerate}
+      \item Como desarrollador del modelo de IA quiero obtener los datos para entrenar y validar el modelo.
+      \item Como desarrollador del modelo de IA quiero procesar los datos para que sean válidos y poder usarlos.
+      \item Como desarrollador del modelo de IA quiero preparar los datos para que puedan utilizarse en el entrenamiento y validación del modelo.
+    \end{enumerate}
+  \item \textbf{\'{E}pica 2} - Modelo de Inteligencia Artificial
+    \begin{enumerate}
+      \item Como desarrollador del modelo de IA quiero conocer las opciones de modelos disponibles para el caso de uso y tener una preselección.
+      \item Como desarrollador del modelo de IA quiero entrenar los modelos de IA preseleccionados para predecir propiedades mecánicas de una pieza impresa en base a los datos obtenidos capa a capa.
+      \item Como desarrollador del modelo de IA quiero validar los modelos de IA entrenados para determinar el mejor modelo.
+      \item Como usuario del sistema quiero tener acceso a un modelo de IA que prediga las propiedades mecánicas de partes impresas.
+    \end{enumerate}
+  \item \textbf{\'{E}pica 3} - Dashboard y Visualización
+    \begin{enumerate}
+      \item Como usuario quiero tener acceso remoto a la información de impresión y a las predicciones para no tener que estar físicamente frente a la computadora local.
+      \item Como usuario quiero poder ver el resultado de las predicciones capa a capa en el \textit{dashboard}.
+      \item \textit{Opcional} - Como usuario quiero poder controlar remotamente la impresión de una pieza en base a los resultados de la predicción.
+      \item \textit{Opcional} - Como usuario quiero obtener sugerencias en relación a los resultados de predicción de las propiedades mecánicas de la parte en impresión.
+    \end{enumerate}
+  \item \textbf{\'{E}pica 4} - Arquitectura del Sistema
+    \begin{enumerate}
+      \item Como administrador del sistema quiero tener los datos segregados por tipo, categoría y uso.
+      \item Como administrador del sistema quiero tener una clara definición y separación del sistema de control de la impresión y del sistema relacionado al modelo de IA.
+    \end{enumerate}
+  \item \textbf{\'{E}pica 5} - Documentación
+    \begin{enumerate}
+      \item Como usuario quiero tener la documentación del sistema para entenderlo y continuar su desarrollo.
+      \item Como responsable del proyecto quiero tener una planificación adecuada para la ejecución del proyecto.
+      \item Como responsable del proyecto quiero tener la memoria del proyecto para presentarla a partes interesadas.
+    \end{enumerate}
+  \item \textbf{\'{E}pica 6} - [Opcional] \textit{Pipeline} de entrenamiento, validación y despliegue del modelo de IA
+    \begin{enumerate}
+      \item Como desarrollador de modelos de IA quiero un \textit{pipeline} para administrar múltiples modelos de IA.
+      \item Como desarrollador de modelos de IA quiero un \textit{pipeline} para administrar los \textit{inputs} de entrenamiento.
+      \item Como desarrollador de modelos de IA quiero un \textit{pipeline} para administrar el entrenamiento de diferentes modelos de IA.
+      \item Como desarrollador de modelos de IA quiero un \textit{pipeline} para validar múltiples modelos de IA entrenados bajo características similares.
+      \item Como desarrollador de modelos de IA quiero un \textit{pipeline} desplegar un modelo de IA al sistema productivo.
+    \end{enumerate}
+\end{enumerate}
+
+El puntaje de cada historia se encuentra en la siguiente tabla:
+
+\begin{table}[htpb]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{C0C0C0}
+Historia & Dificultad & Complejidad & Riesgo & Total & Story Points \\ \hline
+1.1 & 1 & 1 & 3 & 5 & 5 \\ \hline
+1.2 & 3 & 1 & 1 & 5 & 5 \\ \hline
+1.3 & 3 & 3 & 2 & 8 & 8 \\ \hline
+2.1 & 5 & 3 & 1 & 9 & 8 \\ \hline
+2.2 & 5 & 3 & 3 & 11 & 13 \\ \hline
+2.3 & 3 & 3 & 5 & 11 & 13 \\ \hline
+2.4 & 3 & 3 & 3 & 9 & 8 \\ \hline
+3.1 & 3 & 5 & 1 & 9 & 8 \\ \hline
+3.2 & 1 & 3 & 1 & 5 & 5 \\ \hline
+3.3 & 3 & 3 & 1 & 7 & 8 \\ \hline
+3.4 & 3 & 3 & 3 & 9 & 8 \\ \hline
+4.1 & 3 & 3 & 1 & 7 & 8 \\ \hline
+4.2 & 1 & 3 & 1 & 5 & 5 \\ \hline
+5.1 & 5 & 3 & 1 & 9 & 8 \\ \hline
+5.2 & 5 & 3 & 3 & 11 & 13 \\ \hline
+5.3 & 5 & 3 & 3 & 11 & 13 \\ \hline
+6.1 & 3 & 5 & 3 & 11 & 13 \\ \hline
+6.2 & 3 & 1 & 1 & 5 & 5 \\ \hline
+6.3 & 3 & 1 & 3 & 7 & 8 \\ \hline
+6.4 & 3 & 3 & 3 & 9 & 8 \\ \hline
+6.5 & 3 & 1 & 5 & 9 & 8 \\ \hline
+\end{tabular}
+\end{table}
+
+
+\section{8. Entregables principales del proyecto}
+\label{sec:entregables}
+
+\begin{itemize}
+	\item Documentación de los modelos de predicción seleccionados, resultados y conclusiones.
+	\item Diagrama de alto nivel del sistema, flujo de datos, e interacciones.
+	\item Sistema de predicción implementado e integrado en el flujo de trabajo de impresión.
+	\item Memoria del trabajo final.
+	\item \textit{Opcional} - \textit{Pipeline} de operaciones de aprendizaje automático para administrar el entrenamiento, validación y despliegue de modelos de predicción.
+\end{itemize}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-A partir de cada HU, descomponer en tareas concretas, técnicas y medibles:
+\begin{enumerate}
+    \item Planificación y definición del proyecto (28 h)
+    	\begin{enumerate}
+        	\item Desarrollo del plan de proyecto (28 h)
+    	\end{enumerate}
+    \item Investigación Previa (45 h)
+    	\begin{enumerate}
+        	\item Análisis de documentación y proyectos previos (15 h)
+        	\item Investigación de modelos de IA y sus requerimientos (20 h)
+        	\item Investigación de \textit{frameworks} para el \textit{dashboard} y compatibilidad con interfaces existentes (10 h)
+    	\end{enumerate}
+    \item Diseño del proyecto (65 h)
+    	\begin{enumerate}
+        	\item Diseño del \textit{pipeline} de extracción, transformación y carga de datos de entrenamiento (5 h)
+        	\item Diseño del \textit{pipeline} de extracción, transformación y carga de datos para la predicción (5 h)
+        	\item Diseño de la arquitectura de modelos de IA para la predicción de propiedades mecánicas de partes impresas (20 h)
+        	\item Selección y diseño de las bases de datos y sistemas de almacenamiento de datos (20 h)
+        	\item Diseño de la arquitectura e interfaz remota para la visualización de datos (15 h)
+    	\end{enumerate}
+    \item Preparación de datos de entrenamiento y validación (22 h)
+    \begin{enumerate}
+        \item Obtención de imágenes originales y procesadas para entrenamiento (4 h)
+        \item Obtención de datos de impresión para entrenamiento (4 h)
+        \item Obtención de resultados de simulación y ensayos para validación (4 h)
+        \item Implementación de proceso de segmentación de datos (10 h)
+    \end{enumerate}
+    \item Desarrollo de modelos de IA (40 h)
+    \begin{enumerate}
+        \item Programación de los modelos de IA preseleccionados (40 h)
+        \item Optimización del código (10 h)
+    \end{enumerate}
+    \item Entrenamiento, pruebas y selección de modelo (105 h)
+    \begin{enumerate}
+        \item Entrenamiento de los distintos modelos de predicción (45 h)
+        \item Evaluación del desempeño de los distintos modelos (25 h)
+        \item Optimización de los modelos de predicción (30 h)
+        \item Selección del modelo de predicción (5 h)
+    \end{enumerate}
+    \item Implementación del sistema de predicción de propiedades mecánicas de partes impresas (40 h)
+    \begin{enumerate}
+        \item Desarrollo de interfaz para el consumo de datos de entrada para la predicción (10 h)
+        \item Configuración del sistema de predicción (20 h)
+        \item Desarrollo de interfaz para publicación de resultados de predicción (10 h)
+    \end{enumerate}
+    \item Desarrollo de \textit{Dashboard} (100 h)
+    \begin{enumerate}
+        \item Desarrollo del front-end del \textit{dashboard} remoto (40 h)
+        \item Desarrollo del back-end del \textit{dashboard} remoto (40 h) 
+        \item Incorporación de otras interfaces de usuario en el \textbf{dashboard} remoto (20 h) (opcional)
+    \end{enumerate}
+    \item Desarrollo de bases de datos e infraestructura (95 h)
+    \begin{enumerate}
+        \item Desarrollo de interfaz para el envío de datos desde el sistema de impresión (20 h)
+        \item Desarrollo de interfaz para el procesamiento de imágenes para el sistema de visión (30 h)
+        \item Configuración de la base de datos para almacenar imágenes del sistema de visión (10 h)
+        \item Configuración de la base de datos para los datos de impresión (10 h)
+        \item Configuración de la base de datos para los resultados de predicción (10 h)
+        \item Desarrollo de interfaz para el acceso a los datos almacenados (15 h)
+    \end{enumerate}
+    \item Documentación (93 h)
+    \begin{enumerate}
+        \item Elaboración de memoria de proyecto (primera parte) (48 h)
+        \item Elaboración de memoria de proyecto (segunda parte) (35 h)
+        \item Elaboración de documento final para cliente (10 h)
+    \end{enumerate}
+    \item Tareas de Cierre  (30 h)
+    \begin{enumerate}
+        \item Informe de avance (8 h)
+        \item Presentación al cliente (10 h)
+        \item Presentación final (12 h)
+    \end{enumerate}
+\end{enumerate}
 
-\begin{itemize}
-  \item Duración estimada: entre 2 y 8 h. Evitar tareas genéricas.
-  \item Si una tarea excede 8 h, dividirla.
-  \item Indicar prioridad relativa (Alta, Media, Baja).
-\end{itemize}
+Cantidad total de horas: 663.
 
-\begin{table}[htpb]
-\centering
-\begin{tabularx}{\linewidth}{@{}|X|X|c|c|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0}
-Historia de usuario & Tarea técnica & Estimación & Prioridad \\ \hline
-HU1 & Tarea 1 HU1 & 6 h & Alta \\ \hline
-HU1 & Tarea 2 HU1 & 8 h & Alta \\ \hline
-HU2 & Tarea 1 HU2 & 5 h & Media \\ \hline
-HU2 & Tarea 2 HU2 & 6 h & Alta \\ \hline
-... & ... & ... & ... \\ \hline
-\end{tabularx}
-\end{table}
+\section{10. Diagrama de Activity On Node}
+\label{sec:AoN}
 
-\textbf{Criterios para estimar tiempos:}
-\begin{itemize}
-  \item Considerar dificultad, complejidad técnica y grado de incertidumbre de cada tarea.
-  \item Evitar subestimar el esfuerzo requerido. Si una tarea supera las 8 h, dividirla en subtareas.
-  \item Basar la estimación en la experiencia propia o en referencias de tareas similares.
-\end{itemize}
+\begin{consigna}{red}
+Armar el AoN a partir del WBS definido en la etapa anterior.
 
-\textbf{Sobre la prioridad:}
-\begin{itemize}
-  \item Asignar una prioridad relativa (Alta, Media o Baja) según la relevancia funcional de la tarea y su impacto en los entregables.
-  \item Priorizar tareas que estén vinculadas a criterios de aceptación de las HU o que sean necesarias para desbloquear otras.
-  \item Incluir tareas opcionales solo si están bien justificadas.
-\end{itemize}
-
-\textbf{Recomendaciones generales:}
-\begin{itemize}
-  \item Incluir al menos dos tareas por historia de usuario.
-  \item El total estimado debe ser coherente con la planificación global de unas 600 horas (la cantidad de horas sugeridas para un trabajo de posgrado).
-  \item Este desglose se utilizará en las secciones siguientes para armar el diagrama de Gantt (sección 10) y la planificación de sprints (sección 11).
-  \item Recordar que la calidad del desglose impacta directamente en la calidad de la planificación del proyecto.
-\end{itemize}
+Una herramienta simple para desarrollar los diagramas es el Draw.io (\url{https://app.diagrams.net/}).
+\href{https://app.diagrams.net}{Draw.io}
 
 
-\section{10. Diagrama de Gantt}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+\caption{Diagrama de \textit{Activity on Node}.}
+\label{fig:AoN}
+\end{figure}
+
+Indicar claramente en qué unidades están expresados los tiempos.
+De ser necesario indicar los caminos semi críticos y analizar sus tiempos mediante un cuadro.
+Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color.
+
+\end{consigna}
+
+\section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-El diagrama de Gantt debe representar de forma visual y cronológica todas las tareas del proyecto, abarcando aproximadamente 600 horas totales, de las cuales entre 480 y 500 deben destinarse a tareas técnicas (desarrollo, pruebas, implementación) y entre 100 y 120 a tareas no técnicas (planificación, documentación, escritura de memoria y preparación de la defensa).
+\begin{consigna}{red}
+Existen muchos programas y recursos \textit{online} para hacer diagramas de Gantt, entre los cuales destacamos:
 
-\textbf{Consignas y recomendaciones:}
 \begin{itemize}
-  \item Incluir tanto tareas técnicas derivadas de las HU como tareas no técnicas generales del proyecto.
-  \item El eje vertical debe listar las tareas y el eje horizontal representar el tiempo en semanas o fechas.
-  \item Utilizar colores diferenciados para distinguir tareas técnicas y no técnicas.
-  \item Las tareas deben estar ordenadas cronológicamente y reflejar todo el ciclo del proyecto.
-  \item Iniciar con la planificación del proyecto (coincidente con el inicio de Gestión de Proyectos) y finalizar con la defensa, próxima a la fecha de cierre del trabajo.
-  \item Configurar el software para mostrar los códigos del desglose de tareas y los nombres junto a cada barra.
-  \item Asegurarse de que la fecha final coincida con la del Acta Constitutiva.
-  \item Evitar tareas genéricas o ambiguas y asegurar una secuencia lógica y realista.
-  \item Las fechas pueden ser aproximadas; ajustar el ancho del diagrama según el texto y el parámetro \texttt{x unit}. Para mejorar la apariencia del diagrama, es necesario ajustar este valor y, quizás, acortar los nombres de las tareas.
+\item Planner
+\item GanttProject
+\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
+\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
+\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
 \end{itemize}
 
-\textbf{Herramientas sugeridas:}
+Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
+Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
+
+Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
+Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
+Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
+
+En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. 
+En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
+
+Las fechas pueden ser calculadas utilizando alguna de las herramientas antes citadas. Sin embargo, el siguiente ejemplo
+fue elaborado utilizando 
+\href{https://docs.google.com/spreadsheets/d/1fBz8NhSpc4tkkhz3KjJCbh1nR_ltDkfEcZi4tZXduqs}{esta hoja de cálculo}.
+
+Es importante destacar que el ancho del diagrama estará dado por la longitud del texto utilizado para las tareas 
+(Ejemplo: tarea 1, tarea 2, etcétera) y el valor \textit{x unit}. Para mejorar la apariencia del diagrama, es necesario
+ajustar este valor y, quizás, acortar los nombres de las tareas.
+
+\begin{figure}[htpb]
+  \begin{center}
+    \begin{ganttchart}[
+      time slot unit=day,
+      time slot format=isodate,
+      x unit=0.038cm,
+      y unit title=0.7cm,
+      y unit chart=0.6cm,
+      milestone/.append style={xscale=4}
+      ]{2021-03-05}{2021-12-16}
+      \gantttitlecalendar*{2021-03-05}{2021-12-16}{year} \\
+      \gantttitlecalendar*{2021-03-05}{2021-12-16}{month} \\
+      \ganttgroup{Duración Total}{2021-03-05}{2021-12-16} \\
+      %%%%%%%%%%%%%%%%%Organización
+      \ganttgroup{Organización}{2021-03-05}{2021-04-16} \\
+      \ganttbar{Planificación del proyecto}{2021-03-05}{2021-04-15} \\
+      %%%%%%%%%%%%%%%%%Ejecución
+      \ganttgroup{Ejecución}{2021-04-16}{2021-10-21} \\
+      \ganttbar{Tarea 1}{2021-04-16}{2021-04-29} \\
+      \ganttbar{Tarea 2}{2021-04-30}{2021-05-13} \\
+      \ganttbar{Tarea 3}{2021-05-14}{2021-05-27} \\
+      \ganttbar{Tarea 4}{2021-05-28}{2021-07-12} \\
+      \ganttbar{Tarea 5}{2021-07-13}{2021-08-09} \\
+      \ganttbar{Tarea 6}{2021-08-10}{2021-09-23} \\
+      \ganttbar{Tarea 7}{2021-09-24}{2021-09-30} \\
+      \ganttbar{Tarea 8}{2021-10-01}{2021-10-14} \\
+      \ganttbar{Tarea 9}{2021-10-15}{2021-10-21} \\
+      % %%%%%%%%%%%%%%%%%Finalización
+      \ganttgroup{Finalización}{2021-10-22}{2021-12-16} \\
+      \ganttbar{Memoria v1}{2021-10-22}{2021-11-04} \\
+      \ganttbar{Memoria v2}{2021-11-05}{2021-11-18} \\
+      \ganttbar{Memoria final}{2021-11-19}{2021-12-02} \\
+      % La fecha del siguiente milestone es la fecha en que terminamos la memoria
+      \ganttmilestone{Enviar memoria al director}{2021-12-02} \\
+      \ganttbar{Elaborar la presentación}{2021-12-03}{2021-12-16} \\
+      \ganttmilestone{Ensayo de la presentación}{2021-12-16} \\
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{ganttchart}
+  \end{center}
+  \caption{Diagrama de gantt de ejemplo}
+  \label{fig:gantt}
+\end{figure}
+
+
+\begin{landscape}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
+\caption{Ejemplo de diagrama de Gantt (apaisado).} %Modificar este título acorde.
+\label{fig:diagGantt}
+\end{figure}
+
+\end{landscape}
+
+\end{consigna}
+
+
+\section{12. Presupuesto detallado del proyecto}
+\label{sec:presupuesto}
+
+\begin{consigna}{red}
+Si el proyecto es complejo entonces separarlo en partes:
 \begin{itemize}
-  \item Planner, GanttProject, Trello + plugins\\
-  \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-  \item Creately (colaborativa online)\\
-  \url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-  \item LaTeX con \texttt{pgfgantt}:\\
-  \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
+	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
+	\item El desglose detallado del subtotal de cada una de las áreas.
 \end{itemize}
 
-Incluir una imagen legible del diagrama de Gantt. Si es muy ancho, presentar primero la tabla y luego el gráfico de barras.
+IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
 
-\section{11. Planificación de Sprints}
+Incluir la aclaración de si se emplea como moneda el peso argentino (ARS) o si se usa moneda extranjera (USD, EUR, etc). Si es en moneda extranjera se debe indicar la tasa de conversión respecto a la moneda local en una fecha dada.
 
-Organizar las tareas técnicas del proyecto en sprints de trabajo que permitan distribuir de forma equilibrada la carga horaria total, estimada en 600 horas.
-
-\textbf{Consigna:}
-\begin{itemize}
-  \item Completar una tabla que relacione sprints con HU y tareas técnicas correspondientes.
-  \item Incluir estimación en horas para cada tarea.
-  \item Indicar responsable y porcentaje de avance estimado o completado.
-  \item Contemplar también tareas de planificación, documentación, redacción de memoria y preparación de defensa.
-\end{itemize}
-
-\textbf{Conceptos clave:}
-\begin{itemize}
-  \item Una \'{e}pica es una unidad funcional amplia; una historia de usuario es una funcionalidad concreta; un sprint es una unidad de tiempo donde se ejecutan tareas.
-  \item Las tareas son el nivel más desagregado: permiten estimar tiempos, asignar responsables y monitorear progreso.
-\end{itemize}
-
-\textbf{Duración sugerida:}
-\begin{itemize}
-  \item Para un proyecto de 600 h, se recomienda planificar entre 10 y 12 sprints de aproximadamente 2 semanas cada uno.
-  \item Asignar entre 45 y 50 horas efectivas por sprint a tareas técnicas.
-  \item Reservar 100 a 120 h para actividades no técnicas (planificación, escritura, reuniones, defensa).
-\end{itemize}
-
-\textbf{Importante:}
-\begin{itemize}
-  \item En proyectos individuales, el responsable suele ser el propio autor.
-  \item Aun así, desagregar tareas facilita el seguimiento y mejora continua.
-\end{itemize}
-
-\textbf{Conversión opcional de Story Points a horas:}
-\begin{itemize}
-  \item 1 SP \(\approx\) 2 h como referencia flexible.
-  \item Tener en cuenta aproximaciones tipo Fibonacci.
-\end{itemize}
+\end{consigna}
 
 \begin{table}[htpb]
 \centering
-\caption{Formato sugerido}
-\begin{tabularx}{\linewidth}{@{}|l|l|X|c|l|c|@{}}
+\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
 \hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+Descripción &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+ &
+  \multicolumn{1}{c|}{} &
+  \multicolumn{1}{c|}{} &
+  \multicolumn{1}{c|}{} \\ \hline
+ &
+  \multicolumn{1}{c|}{} &
+  \multicolumn{1}{c|}{} &
+  \multicolumn{1}{c|}{} \\ \hline
+\multicolumn{1}{|l|}{} &
+   &
+   &
+   \\ \hline
+\multicolumn{1}{|l|}{} &
+   &
+   &
+   \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} &
+  \multicolumn{1}{c|}{} \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+Descripción &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+\multicolumn{1}{|l|}{} &
+   &
+   &
+   \\ \hline
+\multicolumn{1}{|l|}{} &
+   &
+   &
+   \\ \hline
+\multicolumn{1}{|l|}{} &
+   &
+   &
+   \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} &
+  \multicolumn{1}{c|}{} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-Sprint & HU o fase & Tarea & Horas / SP & Responsable & \% Completado \\ \hline
-Sprint 0 & Planificación & Definir alcance y cronograma & 10 h & Alumno & 100\% \\ \hline
-Sprint 0 & Planificación & Reunión con tutor/cliente & 5 h & Alumno & 50\% \\ \hline
-Sprint 0 & Planificación & Ajuste de entregables & 6 h & Alumno & 25\% \\ \hline
-Sprint 1 & HU1 & Tarea 1 HU1 & 6 h / 3 SP & Alumno & 0\% \\ \hline
-Sprint 1 & HU1 & Tarea 2 HU1 & 10 h / 5 SP & Alumno & 0\% \\ \hline
-Sprint 2 & HU2 & Tarea 1 HU2 & 7 h / 5 SP & Alumno & 0\% \\ \hline
-... & ... & ... & ... & ... & ... \\ \hline
-Sprint 5 & Escritura & Redacción memoria & 50 h / 34 SP & Alumno & 0\% \\ \hline
-Sprint 6 & Defensa & Preparación exposición & 20 h / 13 SP & Alumno & 0\% \\ \hline
-\end{tabularx}
+\multicolumn{3}{|c|}{TOTAL} &
+   \\ \hline
+\end{tabularx}%
 \end{table}
-
-\textbf{Recomendaciones:}
-\begin{itemize}
-  \item Verificar que la carga horaria por sprint sea equilibrada.
-  \item Usar sprints de 1 a 3 semanas, acordes al cronograma general.
-  \item Actualizar el \% completado durante el seguimiento del proyecto.
-  \item Considerar un sprint final exclusivo para pruebas, revisión y ajustes antes de la defensa.
-\end{itemize}
-
-
-\section{12. Normativa y cumplimiento de datos (gobernanza)}
-
-En esta sección se debe analizar si los datos utilizados en el proyecto están sujetos a normativas de protección de datos y privacidad, y en qué condiciones se pueden emplear.
-
-\textbf{Aspectos a considerar:}
-\begin{itemize}
-  \item Evaluar si los datos están regulados por normativas como GDPR, Ley 25.326 de Protección de Datos Personales en Argentina, HIPAA u otras según jurisdicción y temática.
-  \item Determinar si el uso de los datos requiere consentimiento explícito de los usuarios involucrados.
-  \item Indicar si existen restricciones legales, técnicas o contractuales sobre el uso, compartición o publicación de los datos.
-  \item Aclarar si los datos provienen de fuentes licenciadas, de acceso público o bajo algún tipo de autorización especial.
-  \item Analizar la viabilidad del proyecto desde el punto de vista legal y ético, considerando la gobernanza de los datos.
-\end{itemize}
-
-Este análisis es clave para garantizar el cumplimiento normativo y evitar conflictos legales durante el desarrollo y publicación del proyecto.
 
 
 \section{13. Gestión de riesgos}
@@ -548,93 +692,46 @@ Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
 
 \end{consigna}
 
-\section{14. Sprint Review}
-\label{sec:sprint_review}
 
-La revisión de sprint (\emph{Sprint Review}) es una práctica fundamental en metodologías ágiles. Consiste en revisar y evaluar lo que se ha completado al finalizar un sprint. En esta instancia, se presentan los avances y se verifica si las funcionalidades cumplen con los criterios de aceptación establecidos. También se identifican entregables parciales y se consideran ajustes si es necesario.
+\section{14. Gestión de la calidad}
+\label{sec:calidad}
 
-Aunque el proyecto aún se encuentre en etapa de planificación, esta sección permite proyectar cómo se evaluarán las funcionalidades más importantes del backlog. Esta mirada anticipada favorece la planificación enfocada en valor y permite reflexionar sobre posibles obstáculos.
+\begin{consigna}{red}
+Elija al menos diez requerimientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
 
-\textbf{Objetivo:} anticipar cómo se evaluará el avance del proyecto a medida que se desarrollen las funcionalidades, utilizando como base al menos cuatro historias de usuario del \emph{Product Backlog}.
-
-
-Seleccionar al menos 4 HU del Product Backlog. Para cada una, completar la siguiente tabla de revisión proyectada:
-
-\textbf{Formato sugerido:}
-\begin{table}[htpb]
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|>{\raggedright\arraybackslash}m{2.5cm}|
-                >{\raggedright\arraybackslash}m{2.3cm}|
-                >{\raggedright\arraybackslash}m{3cm}|
-                >{\raggedright\arraybackslash}m{3cm}|
-                >{\raggedright\arraybackslash}m{3cm}|}
-\hline
-\rowcolor[HTML]{CCCCCC}
-\textbf{HU seleccionada} & \textbf{Tareas asociadas} & \textbf{Entregable esperado} & \textbf{¿Cómo sabrás que está cumplida?} & \textbf{Observaciones o riesgos} \\
-\hline
-                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
-\multirow{-2}{=}{HU1}    & Tarea 2 & \multirow{-2}{=}{Módulo funcional} & \multirow{-2}{=}{Cumple criterios de aceptación definidos} & \multirow{-2}{=}{Falta validar con el tutor} \\
-\hline
-                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
-\multirow{-2}{=}{HU3}    & Tarea 2 & \multirow{-2}{=}{Reporte generado} & \multirow{-2}{=}{Exportación disponible y clara} & \multirow{-2}{=}{Requiere datos reales} \\
-\hline
-                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
-\multirow{-2}{=}{HU5}    & Tarea 2 & \multirow{-2}{=}{Panel de gestión} & \multirow{-2}{=}{Roles diferenciados operativos} & \multirow{-2}{=}{Riesgo en integración} \\
-\hline
-                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
-\multirow{-2}{=}{HU7}    & Tarea 2 & \multirow{-2}{=}{Informe trimestral} & \multirow{-2}{=}{PDF con gráficos y evolución} & \multirow{-2}{=}{Puede faltar tiempo para ajustes} \\
-\hline
-\end{tabular}
-\end{table}
-
-\section{15. Sprint Retrospective}    
-\label{sec:sprint_retro}
-
-La retrospectiva de sprint es una práctica orientada a la mejora continua. Al finalizar un sprint, el equipo (o el alumno, si trabaja de forma individual) reflexiona sobre lo que funcionó bien, lo que puede mejorarse y qué acciones concretas pueden implementarse para trabajar mejor en el futuro.
-
-Durante la cursada se propuso el uso de la \textbf{Estrella de la Retrospectiva}, que organiza la reflexión en torno a cinco ejes:
+\begin{itemize} 
+\item Req \#1: copiar acá el requerimiento con su correspondiente número.
 
 \begin{itemize}
-\item  ¿Qué hacer más?
-\item  ¿Qué hacer menos?
-\item  ¿Qué mantener?
-\item  ¿Qué empezar a hacer?
-\item  ¿Qué dejar de hacer?
+	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar.
+	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar. 
 \end{itemize}
 
-Aun en una etapa temprana, esta herramienta permite que el alumno planifique su forma de trabajar, identifique anticipadamente posibles dificultades y diseñe estrategias de organización personal.
+\end{itemize}
 
-\textbf{Objetivo:} reflexionar sobre las condiciones iniciales del proyecto, identificando fortalezas, posibles dificultades y estrategias de mejora, incluso antes del inicio del desarrollo.
+Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  
 
+Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  
 
-Completar la siguiente tabla tomando como referencia los cinco ejes de la Estrella de la Retrospectiva (\emph{Starfish} o estrella de mar). Esta instancia te ayudará a definir buenas prácticas desde el inicio y prepararte para enfrentar el trabajo de forma organizada y flexible. Se deberá completar la tabla al menos para 3 sprints técnicos y 1 no técnico.
+En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
 
-\textbf{Formato sugerido:}
+\end{consigna}
 
-\begin{table}[htpb]
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{1.8cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|}
-\hline
-\rowcolor[HTML]{CCCCCC} 
-\textbf{Sprint tipo y N°} & \textbf{¿Qué hacer más?} & \textbf{¿Qué hacer menos?} & \textbf{¿Qué mantener?} & \textbf{¿Qué empezar a hacer?} & \textbf{¿Qué dejar de hacer?} \\
-\hline
-Sprint técnico - 1 & Validaciones continuas con el alumno & Cambios sin versión registrada & Pruebas con datos simulados & Documentar cambios propuestos & Ajustes sin análisis de impacto \\
-\hline
-Sprint técnico - 2 & Verificar configuraciones en múltiples escenarios & Modificar parámetros sin guardar historial & Perfiles reutilizables & Usar logs para configuración & Repetir pruebas manuales innecesarias \\
-\hline
-Sprint técnico - 8 & Comparar correlaciones con casos previos & Cambiar parámetros sin justificar & Revisión cruzada de métricas & Anotar configuraciones usadas & Trabajar sin respaldo de datos \\
-\hline
-Sprint no técnico - 12 (por ej.: ``Defensa'') & Ensayos orales con feedback & Cambiar contenidos en la memoria & Material visual claro & Dividir la presentación por bloques & Agregar gráficos difíciles de explicar \\
-\hline
-\end{tabular}
-\end{table}
+\section{15. Procesos de cierre}    
+\label{sec:cierre}
 
+\begin{consigna}{red}
+Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
 
+\begin{itemize}
+	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:\\
+	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
+	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, los problemas que surgieron y cómo se solucionaron:\\
+	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
+	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:\\
+	  - Indicar esto y quién financiará los gastos correspondientes.
+\end{itemize}
 
+\end{consigna}
 
 \end{document}
